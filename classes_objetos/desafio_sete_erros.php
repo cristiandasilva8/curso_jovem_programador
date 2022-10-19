@@ -1,6 +1,8 @@
 <div class="titulo">Desafio dos 7 erros</div>
 
+
 <?php
+
 interface Template {
     function metodo1();
     public function metodo2($parametros);

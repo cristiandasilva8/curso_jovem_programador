@@ -2,22 +2,26 @@
 
 <?php
 interface Template {
-    function metodo1();
+    public function metodo1();
     public function metodo2($parametros);
 }
 
-abstract class ClasseAbstrata implements Template{
-    public function metodo3(){
+ class ClasseAbstrata implements Template{
+    public function metodo2($parametros){
 
         echo "Estou funcionando";
     }
-}
 
-class Classe implements ClasseAbstrata{
-    function __constructor($parametros){
-
+    public function metodo1(){
+        echo 'Cristiaaaaannn';
     }
 }
 
-$exemplo = Classe();
-$exemplo.metodo3();
+class Classe extends ClasseAbstrata{
+    function __constructor($parametros){
+        echo 'Teste!';
+    }
+}
+
+$exemplo = new Classe();
+$exemplo->metodo2("Teste");

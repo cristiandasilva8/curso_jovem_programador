@@ -34,6 +34,11 @@
                             Construtor e Destrutor
                             </a>
                         </li>
+                        <li>
+                            <a href="exercicio.php?dir=classes_objetos&file=desafio_sete_erros">
+                            Desafio dos 7 erros
+                            </a>
+                        </li>
                     </ul>
                 </div>
                 <div class="modulo vermelho-escuro">

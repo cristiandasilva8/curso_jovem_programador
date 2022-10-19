@@ -1,23 +1,31 @@
-<div class="titulo">Desafio dos 7 erros</div>
+<div class="titulo">Construtor e Destrutor</div>
 
 <?php
-interface Template {
-    function metodo1();
-    public function metodo2($parametros);
-}
 
-abstract class ClasseAbstrata extends Template{
-    public function metodo3(){
+class Pessoa {
+    public $nome;
+    public $idade;
+    public $data_nascimento;
 
-        echo "Estou funcionando";
+    function __construct($novoNome, $data_nasc, $idade = 0){
+        echo 'Construtor invocado! <br>';
+        $this->nome = $novoNome;
+        $this->idade = $idade;
+        $this->data_nascimento = $data_nasc;
     }
-}
 
-class Classe implements ClasseAbstrata{
-    function __constructor($parametros){
-
+    function __destruct(){
+        echo "E Faliceu!";
     }
+
+    public function apresentar(){
+        echo "Nome: {$this->nome} idade: {$this->idade} anos Data de nascimento: {$this->data_nascimento}<br>";
+    }
+
 }
 
-$exemplo = Classe();
-$exemplo.metodo3();
+$p1 = new Pessoa("Amanda", "19/10/2022");
+
+$p1->apresentar();
+
+unset($p1);

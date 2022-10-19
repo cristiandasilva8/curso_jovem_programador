@@ -6,7 +6,7 @@ interface Template {
     public function metodo2($parametros);
 }
 
-abstract class ClasseAbstrata extends Template{
+abstract class ClasseAbstrata implements Template{
     public function metodo3(){
 
         echo "Estou funcionando";

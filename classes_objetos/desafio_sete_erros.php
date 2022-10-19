@@ -1,23 +1,31 @@
 <div class="titulo">Desafio dos 7 erros</div>
 
 <?php
-interface Template {
+interface Template {   
     function metodo1();
-    public function metodo2($parametros);
+    function metodo2($parametros);
 }
 
-abstract class ClasseAbstrata extends Template{
+abstract class ClasseAbstrata implements Template{
     public function metodo3(){
-
         echo "Estou funcionando";
     }
-}
+    function metodo1(){
+        echo "Acho que agora vai!";
+    }
 
-class Classe implements ClasseAbstrata{
-    function __constructor($parametros){
-
+    public function metodo2($parametros){
+        echo "Parâmetro: {$this->parametros}<br>";
     }
 }
 
-$exemplo = Classe();
-$exemplo.metodo3();
+class Classe extends ClasseAbstrata{
+    public $parametros;
+
+    function __construct($parametros = 0){
+        $this->parametros = $parametros;
+    }
+}
+
+$exemplo = new Classe();
+$exemplo->metodo3();
